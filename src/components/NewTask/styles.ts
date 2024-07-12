@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     position: "absolute",
     top: 175,
     width: "100%",
-    paddingHorizontal: 20,
+    paddingLeft: 16,
   },
 
   input: {
@@ -21,9 +21,16 @@ export const styles = StyleSheet.create({
     height: 65,
     fontSize: 16,
     color: "#808080",
-    borderRadius: 3,
+    borderRadius: 4,
     marginBottom: 10,
     backgroundColor: "#262626",
+    borderWidth: 0,
+    borderColor: "transparent",
+  },
+
+  inputFocused: {
+    borderColor: "#5E60CE",
+    borderWidth: 1,
   },
   button: {
     height: 65,
