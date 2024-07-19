@@ -15,4 +15,9 @@ export const styles = StyleSheet.create({
     color: "#F2F2F2",
     width: 269,
   },
+
+  through: {
+    textDecorationLine: "line-through",
+    color: "#808080",
+  },
 });

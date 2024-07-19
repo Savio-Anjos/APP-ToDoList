@@ -1,9 +1,19 @@
 import { TextInput, TouchableOpacity, View } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import { styles } from "./styles";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
-export function NewTask() {
+type NewTaskProps = {
+  taskName: string;
+  setTaskName: Dispatch<SetStateAction<string>>;
+  handleAddTask: () => void;
+};
+
+export function NewTask({
+  taskName,
+  setTaskName,
+  handleAddTask,
+}: NewTaskProps) {
   const [isFocused, setIsFocused] = useState<boolean>(false);
 
   return (
@@ -14,8 +24,10 @@ export function NewTask() {
         placeholderTextColor={"#808080"}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
+        value={taskName}
+        onChangeText={(text) => setTaskName(text)}
       />
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleAddTask}>
         <Icon name="plus-circle" size={25} color="#FFF" />
       </TouchableOpacity>
     </View>
