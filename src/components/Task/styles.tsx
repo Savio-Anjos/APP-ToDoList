@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
   taskText: {
     color: "#F2F2F2",
     width: 269,
+    paddingHorizontal: 20,
   },
 
   through: {
